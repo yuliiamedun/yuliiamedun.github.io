@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – Yuliia Medun</title>
+  <meta name="description" content="Contact Yuliia Medun by email, LinkedIn or GitHub.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Nav is rendered by js/main.js. The noscript links keep the site usable without JS. -->
+  <header class="site-header" id="site-header">
+    <noscript>
+      <div class="container nav">
+        <a class="logo" href="index.html">Yuliia Medun</a>
+        <p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="projects.html">Projects</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+      </div>
+    </noscript>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="page-intro" aria-labelledby="contact-title">
+        <h1 id="contact-title">Contact</h1>
+        <p>I’m looking for an internship in data science or machine learning. The quickest way to reach me is by email.</p>
+      </section>
+      <section class="section" aria-label="Contact options">
+        <ul class="contact-list">
+          <li class="card">
+            <h2>Email</h2>
+            <a data-link="email" href="mailto:yuliiamedun@gmail.com">yuliiamedun@gmail.com</a>
+          </li>
+          <li class="card">
+            <h2>LinkedIn</h2>
+            <!-- TODO: URL is set in js/main.js (SITE.linkedin); also update the href here for no-JS visitors -->
+            <a data-link="linkedin" href="https://www.linkedin.com/in/YOUR-LINKEDIN-SLUG">View my LinkedIn profile</a>
+          </li>
+          <li class="card">
+            <h2>GitHub</h2>
+            <!-- TODO: URL is set in js/main.js (SITE.github); also update the href here for no-JS visitors -->
+            <a data-link="github" href="https://github.com/YOUR-GITHUB-USERNAME">See my code on GitHub</a>
+          </li>
+        </ul>
+        <p style="margin-top:1.5rem">Based in Breda, Netherlands.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <noscript><div class="container"><p>© Yuliia Medun</p></div></noscript>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* ==========================================================
+   Yuliia Medun – portfolio
+   Mobile first. Dark theme only, by design.
+   ========================================================== */
+
+:root {
+  --bg: #000;
+  --card: #111;
+  --card-border: #26222f;
+  --heading: #fff;
+  --text: #a3a3ad;          /* muted body text, ~8:1 on black */
+  --text-strong: #d4d4da;
+  --accent: #7c5cd6;        /* borders, badges, lines */
+  --accent-text: #a08bf0;   /* lighter purple for small text: passes 4.5:1 on black */
+  --radius: 10px;
+  --max: 64rem;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-logo: "Caveat", "Segoe Script", "Brush Script MT", cursive;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main { flex: 1; }
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+h1, h2, h3 { color: var(--heading); line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 4vw, 1.9rem); font-weight: 700; letter-spacing: -0.01em; }
+h3 { font-size: 1.05rem; font-weight: 600; }
+p  { margin: 0 0 1rem; }
+
+a { color: var(--accent-text); text-underline-offset: 3px; }
+a:hover { color: #fff; }
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--accent-text);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+.section { padding: 3rem 0; }
+.section > h2 { margin-bottom: 1.75rem; }
+
+.skip-link {
+  position: absolute; left: 1rem; top: -3rem;
+  background: var(--accent); color: #fff; padding: 0.5rem 1rem; border-radius: 6px; z-index: 100;
+}
+.skip-link:focus { top: 1rem; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Header / nav ---------- */
+.site-header { padding: 1rem 0; }
+.nav { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+.logo {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent-text);
+  text-decoration: none;
+}
+.logo:hover { color: #fff; }
+
+.nav-toggle {
+  background: none; border: 1px solid var(--card-border); color: #fff;
+  font: inherit; font-size: 0.9rem; padding: 0.4rem 0.9rem; border-radius: 6px; cursor: pointer;
+}
+.nav-links {
+  display: none; width: 100%;
+  list-style: none; margin: 0.5rem 0 0; padding: 0;
+}
+.nav-links.open { display: block; }
+.nav-links a {
+  display: block; padding: 0.6rem 0;
+  color: #fff; text-decoration: none; font-size: 0.95rem;
+}
+.nav-links a:hover,
+.nav-links a[aria-current="page"] { color: var(--accent-text); }
+
+@media (min-width: 40rem) {
+  .nav-toggle { display: none; }
+  .nav-links { display: flex !important; width: auto; margin: 0; gap: 1.25rem; }
+  .nav-links a { padding: 0.25rem 0; }
+}
+
+/* ---------- Buttons ---------- */
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.btn {
+  display: inline-block; padding: 0.65rem 1.25rem; border-radius: 999px;
+  font-weight: 600; font-size: 0.95rem; text-decoration: none;
+  border: 1.5px solid var(--accent);
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #8d70e0; color: #fff; }
+.btn-ghost { color: #fff; }
+.btn-ghost:hover { background: #1a1625; color: #fff; }
+
+/* ---------- Hero (two columns) ---------- */
+.hero { display: grid; gap: 2rem; align-items: center; padding: 2.5rem 0 1.5rem; }
+.hero h1 { margin-bottom: 1.25rem; }
+.hero .eyebrow { color: var(--accent-text); font-weight: 600; margin-bottom: 0.5rem; }
+.hero-text p { max-width: 34rem; }
+.hero-art { max-width: 18rem; margin: 0 auto; }
+
+@media (min-width: 48rem) {
+  .hero { grid-template-columns: 1.1fr 1fr; padding-top: 3.5rem; }
+  .hero-art { max-width: 22rem; }
+}
+
+.page-intro { padding: 2.5rem 0 0.5rem; }
+.page-intro p { max-width: 40rem; margin-top: 1rem; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+}
+.card h3 { margin-bottom: 0.85rem; }
+.card-grid { display: grid; gap: 1.25rem; }
+@media (min-width: 40rem) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 60rem) { .card-grid.three { grid-template-columns: repeat(3, 1fr); } }
+
+.card-link { text-decoration: none; color: inherit; display: block; transition: border-color 0.15s; }
+.card-link:hover { border-color: var(--accent); color: inherit; }
+
+/* ---------- Pills ---------- */
+.pills { display: flex; flex-wrap: wrap; gap: 0.45rem; list-style: none; margin: 0; padding: 0; }
+.pills li {
+  border: 1.5px solid var(--accent);
+  border-radius: 999px;
+  padding: 0.1rem 0.7rem;
+  font-size: 0.78rem;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* ---------- Timeline ---------- */
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+  position: relative;
+  padding-bottom: 1.75rem;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+/* connecting line, from the centre of one badge to the next */
+.timeline-item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem; top: 3rem; bottom: 0;
+  width: 1px; background: var(--accent);
+}
+.year-badge {
+  width: 3rem; height: 3rem; border-radius: 50%;
+  background: var(--accent); color: #fff;
+  display: grid; place-items: center;
+  font-weight: 700; font-size: 0.75rem;
+}
+.timeline .card h3 { margin-bottom: 0.2rem; }
+.subtitle { color: var(--accent-text); font-size: 0.9rem; margin: 0 0 0.6rem; }
+.timeline .card p:last-child { margin-bottom: 0; font-size: 0.92rem; color: var(--text-strong); }
+
+@media (min-width: 48rem) {
+  .timeline-item { grid-template-columns: 3.5rem 1fr; gap: 1.75rem; }
+  .year-badge { width: 3.5rem; height: 3.5rem; font-size: 0.85rem; }
+  .timeline-item:not(:last-child)::before { left: 1.75rem; top: 3.5rem; }
+}
+
+/* ---------- Projects ---------- */
+.project { padding: 1.5rem; }
+.project h2 { font-size: 1.4rem; margin-bottom: 0.3rem; }
+.project .subtitle { margin-bottom: 1.25rem; }
+.project-figure { margin: 0 0 1.25rem; }
+.project-figure img { border-radius: 6px; width: 100%; }
+.project-section h3 { font-size: 0.85rem; color: var(--accent-text); margin-bottom: 0.3rem; }
+.project-section p { color: var(--text-strong); }
+.project .pills { margin: 0.5rem 0 1.25rem; }
+.project-list { display: grid; gap: 1.5rem; }
+
+/* ---------- Blog ---------- */
+.post-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
+.post-list time, .post-meta { font-size: 0.85rem; color: var(--accent-text); }
+.post-list h2 { font-size: 1.2rem; margin: 0.2rem 0 0.5rem; }
+.post-list p { margin: 0; }
+
+.post { max-width: 42rem; }
+.post h1 { margin: 0.25rem 0 1.5rem; }
+.post-body h2 { font-size: 1.35rem; margin: 2rem 0 0.75rem; }
+.post-body h3 { margin: 1.5rem 0 0.5rem; }
+.post-body p, .post-body li { color: var(--text-strong); }
+.post-body ul, .post-body ol { padding-left: 1.25rem; margin: 0 0 1rem; }
+.post-body code {
+  background: var(--card); border: 1px solid var(--card-border);
+  padding: 0.05rem 0.35rem; border-radius: 4px; font-size: 0.9em;
+}
+.post-body pre {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius); padding: 1rem; overflow-x: auto;
+}
+.post-body pre code { border: 0; padding: 0; background: none; }
+.back-link { display: inline-block; margin-bottom: 1.5rem; }
+
+/* ---------- Contact ---------- */
+.contact-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+@media (min-width: 48rem) { .contact-list { grid-template-columns: repeat(3, 1fr); } }
+.contact-list .card h2 { font-size: 1rem; margin-bottom: 0.4rem; }
+.contact-list a { word-break: break-word; }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--card-border); margin-top: 3rem; padding: 1.5rem 0; font-size: 0.9rem; }
+.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem; }
+.footer-links { display: flex; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

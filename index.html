@@ -1,11 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Yuliia Medun – Resume</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yuliia Medun – Data Science & AI</title>
+  <meta name="description" content="Portfolio of Yuliia Medun, Data Science & AI student at Breda University of Applied Sciences.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <h1>Welcome to my page</h1>
-    <p>Here is my resume:</p>
-    <a href="Resume_Yuliia_Medun.pdf" target="_blank">Download/View Resume</a>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Nav is rendered by js/main.js. The noscript links keep the site usable without JS. -->
+  <header class="site-header" id="site-header">
+    <noscript>
+      <div class="container nav">
+        <a class="logo" href="index.html">Yuliia Medun</a>
+        <p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="projects.html">Projects</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+      </div>
+    </noscript>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-text">
+          <p class="eyebrow">Data Science &amp; AI student at BUas</p>
+          <h1 id="hero-title">Hi, I’m Yuliia.</h1>
+          <p>I study Applied Data Science &amp; Artificial Intelligence at Breda University of Applied Sciences, with hands-on project experience in machine learning, computer vision, NLP and MLOps, including applied research for NPEC and CIA.</p>
+          <p>I’m looking for an internship in data science or machine learning.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="projects.html">View projects</a>
+            <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+          </div>
+        </div>
+        <img class="hero-art" src="assets/img/pixel-seedling.svg" alt="" width="320" height="300">
+      </section>
+
+      <section class="section" aria-labelledby="featured-title">
+        <h2 id="featured-title">Selected work</h2>
+        <div class="card-grid three">
+          <a class="card card-link" href="projects.html#npec">
+            <h3>NPEC Root Phenotyping</h3>
+            <p class="subtitle">Computer vision &amp; RL</p>
+            <p>A simulated robot that inoculates root tips with sub-millimeter precision: 96% end-to-end success.</p>
+          </a>
+          <a class="card card-link" href="projects.html#emotion">
+            <h3>Ukrainian Video Emotion Classification</h3>
+            <p class="subtitle">NLP pipeline</p>
+            <p>Whisper transcription and a fine-tuned Ukrainian RoBERTa: 78% accuracy on 7 emotion classes.</p>
+          </a>
+          <a class="card card-link" href="projects.html#fingerspell">
+            <h3>FingerSpell</h3>
+            <p class="subtitle">Real-time computer vision</p>
+            <p>A webcam tool that teaches the Dutch Sign Language finger alphabet, with near-100% accuracy.</p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <noscript><div class="container"><p>© Yuliia Medun</p></div></noscript>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About – Yuliia Medun</title>
+  <meta name="description" content="About Yuliia Medun: skills, technologies and project experience.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="about">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Nav is rendered by js/main.js. The noscript links keep the site usable without JS. -->
+  <header class="site-header" id="site-header">
+    <noscript>
+      <div class="container nav">
+        <a class="logo" href="index.html">Yuliia Medun</a>
+        <p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="projects.html">Projects</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+      </div>
+    </noscript>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="hero" aria-labelledby="about-title">
+        <div class="hero-text">
+          <h1 id="about-title">About Me</h1>
+          <p>I’m a Data Science &amp; AI student at Breda University of Applied Sciences (BUas), working towards a Bachelor of Science in Applied Data Science &amp; Artificial Intelligence, expected in July 2028. My average grade for 2025–26 is 9.5/10.</p>
+          <p>Through my studies I’ve gained hands-on project experience across machine learning, computer vision, NLP and MLOps, including applied research for NPEC and CIA.</p>
+          <p>I’m looking for an internship in data science or machine learning, to apply these skills to real-world problems and keep learning.</p>
+          <p>I speak Ukrainian (native), English (C1) and Dutch (A2, currently learning).</p>
+        </div>
+        <img class="hero-art" src="assets/img/pixel-seedling.svg" alt="Pixel-art illustration of a purple seedling with its roots growing below the soil" width="320" height="300">
+      </section>
+
+      <section class="section" aria-labelledby="skills-title">
+        <h2 id="skills-title">Skills &amp; Technologies</h2>
+        <div class="card-grid three">
+          <article class="card">
+            <h3>Languages</h3>
+            <ul class="pills"><li>Python</li><li>SQL</li></ul>
+          </article>
+          <article class="card">
+            <h3>ML/DL &amp; Computer Vision</h3>
+            <ul class="pills"><li>PyTorch</li><li>TensorFlow</li><li>HuggingFace Transformers</li><li>scikit-learn</li><li>OpenCV</li><li>U-Net</li><li>scikit-image</li></ul>
+          </article>
+          <article class="card">
+            <h3>NLP</h3>
+            <ul class="pills"><li>spaCy</li><li>Whisper</li><li>RoBERTa fine-tuning</li></ul>
+          </article>
+          <article class="card">
+            <h3>MLOps &amp; Infra</h3>
+            <ul class="pills"><li>Docker</li><li>Docker Compose</li><li>GitHub Actions</li><li>MLflow</li><li>Azure ML</li><li>ClearML</li></ul>
+          </article>
+          <article class="card">
+            <h3>Backend/Data &amp; Tools</h3>
+            <ul class="pills"><li>FastAPI</li><li>PostgreSQL</li><li>MinIO</li><li>Azure Blob Storage</li><li>Git</li><li>pytest</li><li>Poetry/uv</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="exp-title">
+        <h2 id="exp-title">Experience</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <span class="year-badge" aria-hidden="true">2025</span>
+            <article class="card">
+              <h3>Ukrainian Video Emotion Classification</h3>
+              <p class="subtitle"><span class="visually-hidden">2025, </span>for CIA · Group project · Sep – Nov 2025</p>
+              <p>Built a Whisper-to-RoBERTa pipeline that tags emotions in Ukrainian-language video, reaching 78% accuracy on 7 classes.</p>
+            </article>
+          </li>
+          <li class="timeline-item">
+            <span class="year-badge" aria-hidden="true">2025</span>
+            <article class="card">
+              <h3>NPEC Root Phenotyping</h3>
+              <p class="subtitle"><span class="visually-hidden">2025, </span>for NPEC · Individual &amp; group projects · Nov 2025 – Jun 2026</p>
+              <p>Built a CV-to-control pipeline for root tip inoculation (96% end-to-end success), a tracking benchmark and a cloud MLOps platform.</p>
+            </article>
+          </li>
+          <li class="timeline-item">
+            <span class="year-badge" aria-hidden="true">2026</span>
+            <article class="card">
+              <h3>FingerSpell: Dutch Sign Language Recognition</h3>
+              <p class="subtitle"><span class="visually-hidden">2026, </span>Group project · Jan – Feb 2026</p>
+              <p>Built a real-time webcam tool that teaches and quizzes the NGT finger alphabet, with near-100% accuracy.</p>
+            </article>
+          </li>
+          <li class="timeline-item">
+            <span class="year-badge" aria-hidden="true">2026</span>
+            <article class="card">
+              <h3>Dynamic Pricing &amp; Demand Forecasting</h3>
+              <p class="subtitle"><span class="visually-hidden">2026, </span>for Move Intermodal · Group project · Sep 2026 – ongoing</p>
+              <p>Building a pricing strategy framework that combines market signals, customer segmentation and demand forecasting.</p>
+            </article>
+          </li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <noscript><div class="container"><p>© Yuliia Medun</p></div></noscript>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects – Yuliia Medun</title>
+  <meta name="description" content="Projects by Yuliia Medun in computer vision, NLP, MLOps and forecasting.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Nav is rendered by js/main.js. The noscript links keep the site usable without JS. -->
+  <header class="site-header" id="site-header">
+    <noscript>
+      <div class="container nav">
+        <a class="logo" href="index.html">Yuliia Medun</a>
+        <p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="projects.html">Projects</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+      </div>
+    </noscript>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="page-intro" aria-labelledby="projects-title">
+        <h1 id="projects-title">Projects</h1>
+        <p>Applied research and team projects from my studies at BUas, in computer vision, NLP, MLOps and forecasting.</p>
+      </section>
+      <section class="section project-list" aria-label="Project list">
+        <article class="card project" id="npec" aria-labelledby="npec-title">
+          <h2 id="npec-title">NPEC Root Phenotyping</h2>
+          <p class="subtitle">for NPEC · Individual &amp; group projects · Nov 2025 – Jun 2026</p>
+          <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
+          <figure class="project-figure">
+            <img src="assets/projects/npec.gif" alt="TODO: describe what the image shows" loading="lazy">
+          </figure>
+          -->
+          <div class="project-section"><h3>Problem</h3><p>Plant researchers need to inoculate root tips precisely, follow them over time, and run their computer vision models reliably in different environments.</p></div>
+          <div class="project-section"><h3>Approach</h3><p>A CV-to-control pipeline: U-Net segmentation and skeletonization locate root tips, and a controller steers a simulated robot’s pipette. I compared PID against PPO reinforcement learning and chose PID. In separate work I benchmarked 5 tracking methods against a baseline with repeated-measures ANOVA, and built a CI/CD pipeline that publishes one Docker image running locally, on-premise and on Azure, with Airflow retraining and MLflow-tracked model promotion.</p></div>
+          <div class="project-section"><h3>Result</h3><p>96% end-to-end success with sub-millimeter precision, ranked top 10% in the associated Kaggle competition. The tracking benchmark found no significant improvement over the baseline, a rigorously validated null result.</p></div>
+          <ul class="pills"><li>PyTorch</li><li>U-Net</li><li>OpenCV</li><li>PID</li><li>PPO</li><li>ANOVA</li><li>Docker</li><li>GitHub Actions</li><li>Airflow</li><li>MLflow</li><li>Azure</li></ul>
+          <!-- TODO: replace with the project repo URL -->
+          <a href="https://github.com/YOUR-GITHUB-USERNAME/REPO-NAME">View on GitHub<span class="visually-hidden">: NPEC Root Phenotyping</span></a>
+        </article>
+        <article class="card project" id="emotion" aria-labelledby="emotion-title">
+          <h2 id="emotion-title">Ukrainian Video Emotion Classification</h2>
+          <p class="subtitle">for CIA · Group project · Sep – Nov 2025</p>
+          <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
+          <figure class="project-figure">
+            <img src="assets/projects/emotion.gif" alt="TODO: describe what the image shows" loading="lazy">
+          </figure>
+          -->
+          <div class="project-section"><h3>Problem</h3><p>Tag emotions in Ukrainian-language video, a low-resource language with little labelled training data.</p></div>
+          <div class="project-section"><h3>Approach</h3><p>An end-to-end pipeline: Whisper transcription, optional translation, then classification with a fine-tuned Ukrainian RoBERTa transformer. We generated synthetic training data with a local LLM and documented the model with model cards, privacy and sustainability reporting.</p></div>
+          <div class="project-section"><h3>Result</h3><p>78% accuracy on the 7-class emotion task.</p></div>
+          <ul class="pills"><li>Whisper</li><li>RoBERTa</li><li>HuggingFace Transformers</li><li>Synthetic data</li><li>Model cards</li></ul>
+          <!-- TODO: replace with the project repo URL -->
+          <a href="https://github.com/YOUR-GITHUB-USERNAME/REPO-NAME">View on GitHub<span class="visually-hidden">: Ukrainian Video Emotion Classification</span></a>
+        </article>
+        <article class="card project" id="fingerspell" aria-labelledby="fingerspell-title">
+          <h2 id="fingerspell-title">FingerSpell: Dutch Sign Language Recognition</h2>
+          <p class="subtitle">Group project · Jan – Feb 2026</p>
+          <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
+          <figure class="project-figure">
+            <img src="assets/projects/fingerspell.gif" alt="TODO: describe what the image shows" loading="lazy">
+          </figure>
+          -->
+          <div class="project-section"><h3>Problem</h3><p>Help learners practise the NGT (Dutch Sign Language) finger alphabet, including letters that involve movement.</p></div>
+          <div class="project-section"><h3>Approach</h3><p>A real-time webcam tool with hand tracking, built in a 2-week sprint with two teammates. The first model handled static hand shapes well; we improved it with engineered motion features and classical ML model selection.</p></div>
+          <div class="project-section"><h3>Result</h3><p>Near-100% accuracy across the full alphabet.</p></div>
+          <ul class="pills"><li>Hand tracking</li><li>OpenCV</li><li>Feature engineering</li><li>scikit-learn</li></ul>
+          <!-- TODO: replace with the project repo URL -->
+          <a href="https://github.com/YOUR-GITHUB-USERNAME/REPO-NAME">View on GitHub<span class="visually-hidden">: FingerSpell: Dutch Sign Language Recognition</span></a>
+        </article>
+        <article class="card project" id="pricing" aria-labelledby="pricing-title">
+          <h2 id="pricing-title">Dynamic Pricing &amp; Demand Forecasting</h2>
+          <p class="subtitle">for Move Intermodal · Group project · Sep 2026 – ongoing</p>
+          <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
+          <figure class="project-figure">
+            <img src="assets/projects/pricing.gif" alt="TODO: describe what the image shows" loading="lazy">
+          </figure>
+          -->
+          <div class="project-section"><h3>Problem</h3><p>Move Intermodal, a European intermodal logistics provider, wants pricing that responds to the market and fills more rail capacity.</p></div>
+          <div class="project-section"><h3>Approach</h3><p>With a cross-disciplinary team, building a Dynamic Pricing Strategy Framework that combines market-signal analysis, customer segmentation and a demand forecasting model.</p></div>
+          <div class="project-section"><h3>Result</h3><p>Ongoing. The project targets a 10–15% revenue increase and 5–10% higher rail occupancy; these are goals, not achieved results yet.</p></div>
+          <ul class="pills"><li>Demand forecasting</li><li>Customer segmentation</li><li>Market-signal analysis</li></ul>
+          <!-- TODO: client project; remove this link if the repo is private -->
+            <!-- TODO: replace with the project repo URL -->
+          <a href="https://github.com/YOUR-GITHUB-USERNAME/REPO-NAME">View on GitHub<span class="visually-hidden">: Dynamic Pricing &amp; Demand Forecasting</span></a>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <noscript><div class="container"><p>© Yuliia Medun</p></div></noscript>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

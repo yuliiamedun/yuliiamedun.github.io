@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog – Yuliia Medun</title>
+  <meta name="description" content="Notes by Yuliia Medun on data science, machine learning and projects.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="blog">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Nav is rendered by js/main.js. The noscript links keep the site usable without JS. -->
+  <header class="site-header" id="site-header">
+    <noscript>
+      <div class="container nav">
+        <a class="logo" href="index.html">Yuliia Medun</a>
+        <p><a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="projects.html">Projects</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+      </div>
+    </noscript>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <!-- js/blog.js fills this: the post list, or one post when the URL is blog.html?post=slug -->
+      <section class="page-intro" id="blog-root" aria-live="polite">
+        <h1>Blog</h1>
+        <p>Notes on projects and things I’m learning.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="site-footer">
+    <noscript><div class="container"><p>© Yuliia Medun</p></div></noscript>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/posts.js"></script>
+  <script src="js/blog.js"></script>
+</body>
+</html>
