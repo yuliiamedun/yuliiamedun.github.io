@@ -4,15 +4,14 @@
 const SITE = {
   name: "Yuliia Medun",
   email: "yuliiamedun@gmail.com",
-  linkedin: "https://www.linkedin.com/in/YOUR-LINKEDIN-SLUG", // TODO: your LinkedIn URL
-  github: "https://github.com/YOUR-GITHUB-USERNAME",          // TODO: your GitHub URL
+  linkedin: "https://www.linkedin.com/in/yuliia-medun-a2408233a/",
+  github: "https://github.com/yuliiamedun",
 };
 
 const NAV = [
   { href: "index.html", label: "Home", page: "home" },
   { href: "about.html", label: "About", page: "about" },
   { href: "projects.html", label: "Projects", page: "projects" },
-  { href: "blog.html", label: "Blog", page: "blog" },
   { href: "contact.html", label: "Contact", page: "contact" },
 ];
 
