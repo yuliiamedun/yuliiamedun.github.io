@@ -205,8 +205,14 @@ a:hover { color: #fff; }
 .project { padding: 1.5rem; }
 .project h2 { font-size: 1.4rem; margin-bottom: 0.3rem; }
 .project .subtitle { margin-bottom: 1.25rem; }
-.project-figure { margin: 0 0 1.25rem; max-width: 46rem; }
+.project-body { display: grid; gap: 1.5rem; }
+.project-media { display: grid; gap: 1.25rem; align-content: start; }
+.project-figure { margin: 0; }
+@media (min-width: 56rem) {
+  .project-body:has(.project-media) { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 2rem; }
+}
 .project-figure img, .project-figure video { border-radius: 6px; width: 100%; height: auto; display: block; background: var(--card-border); }
+.zoom { display: block; cursor: zoom-in; }
 .project-figure figcaption { font-size: 0.85rem; margin-top: 0.5rem; }
 
 /* Pipeline diagram (Emotion Classification), drawn in site colours */
@@ -221,15 +227,7 @@ a:hover { color: #fff; }
   content: ""; position: absolute; left: 50%; bottom: -1.2rem; transform: translateX(-50%);
   border: 0.4rem solid transparent; border-top: 0.55rem solid var(--accent);
 }
-@media (min-width: 48rem) {
-  .pipeline { flex-direction: row; gap: 1.6rem; align-items: stretch; }
-  .pipeline li { flex: 1; display: flex; flex-direction: column; justify-content: center; }
-  .pipeline li:not(:last-child)::after {
-    left: auto; right: -1.3rem; top: 50%; bottom: auto; transform: translateY(-50%);
-    border: 0.4rem solid transparent; border-left: 0.55rem solid var(--accent);
-  }
-}
-.project-desc { color: var(--text-strong); max-width: 46rem; }
+.project-desc { color: var(--text-strong); }
 .project .pills { margin: 0.5rem 0 1.25rem; }
 .project .pills:last-child { margin-bottom: 0; }
 .project-list { display: grid; gap: 1.5rem; }
