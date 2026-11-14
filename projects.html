@@ -29,69 +29,80 @@
     <div class="container">
       <section class="page-intro" aria-labelledby="projects-title">
         <h1 id="projects-title">Projects</h1>
-        <p>Applied research and team projects from my studies at BUas, in computer vision, NLP, MLOps and forecasting.</p>
+        <p>Applied projects for companies and research partners, carried out through my studies at BUas, in machine learning, computer vision, NLP and MLOps.</p>
       </section>
       <section class="section project-list" aria-label="Project list">
-        <article class="card project" id="npec" aria-labelledby="npec-title">
-          <h2 id="npec-title">NPEC Root Phenotyping</h2>
-          <p class="subtitle">for NPEC · Individual &amp; group projects · Nov 2025 – Jun 2026</p>
+        <article class="card project" id="inoculation" aria-labelledby="inoculation-title">
+          <h2 id="inoculation-title">Autonomous Root Tip Inoculation Pipeline</h2>
+          <!-- TODO: check the dates for this sub-project -->
+          <p class="subtitle">NPEC, via BUas · Individual project · Nov 2025 – Jun 2026</p>
           <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
           <figure class="project-figure">
-            <img src="assets/projects/npec.gif" alt="TODO: describe what the image shows" loading="lazy">
+            <img src="assets/projects/inoculation.gif" alt="TODO: describe what the image shows" loading="lazy">
           </figure>
           -->
-          <div class="project-section"><h3>Problem</h3><p>Plant researchers need to inoculate root tips precisely, follow them over time, and run their computer vision models reliably in different environments.</p></div>
-          <div class="project-section"><h3>Approach</h3><p>A CV-to-control pipeline: U-Net segmentation and skeletonization locate root tips, and a controller steers a simulated robot’s pipette. I compared PID against PPO reinforcement learning and chose PID. In separate work I benchmarked 5 tracking methods against a baseline with repeated-measures ANOVA, and built a CI/CD pipeline that publishes one Docker image running locally, on-premise and on Azure, with Airflow retraining and MLflow-tracked model promotion.</p></div>
-          <div class="project-section"><h3>Result</h3><p>96% end-to-end success with sub-millimeter precision, ranked top 10% in the associated Kaggle competition. The tracking benchmark found no significant improvement over the baseline, a rigorously validated null result.</p></div>
-          <ul class="pills"><li>PyTorch</li><li>U-Net</li><li>OpenCV</li><li>PID</li><li>PPO</li><li>ANOVA</li><li>Docker</li><li>GitHub Actions</li><li>Airflow</li><li>MLflow</li><li>Azure</li></ul>
-          <!-- TODO: replace with the project repo URL -->
-          <a href="https://github.com/yuliiamedun/REPO-NAME">View on GitHub<span class="visually-hidden">: NPEC Root Phenotyping</span></a>
+          <p class="project-desc">An end-to-end system for NPEC (Netherlands Plant Eco-phenotyping Centre) that finds plant root tips in petri dish images and moves the pipette of a simulated Opentrons OT-2 liquid-handling robot onto each one to inoculate it. A U-Net segments the roots, skeletonization and shortest-path tracing locate the tip of each main root, and a coordinate transform maps it into the robot’s workspace. I compared a PPO reinforcement learning agent with PID control on the same targets: PID was about 8× more accurate and 1.8× faster, so it went into the final pipeline. The system reached 96% end-to-end success with sub-millimeter precision (0.132 mm mean positioning error against a 1 mm requirement), and the same root detection pipeline ranked 8th, in the top 10%, of the associated Kaggle competition.</p>
+          <ul class="pills"><li>TensorFlow</li><li>U-Net</li><li>OpenCV</li><li>scikit-image</li><li>PyBullet</li><li>Stable-Baselines3 (PPO)</li><li>PID</li><li>ClearML</li><li>Docker</li></ul>
+          <a href="https://github.com/yuliiamedun/root-tip-inoculation-system">View on GitHub<span class="visually-hidden">: Autonomous Root Tip Inoculation Pipeline</span></a>
+        </article>
+        <article class="card project" id="platform" aria-labelledby="platform-title">
+          <h2 id="platform-title">Plant Phenotyping CV Platform</h2>
+          <!-- TODO: check the dates for this sub-project -->
+          <p class="subtitle">NPEC, via BUas · Group project · Nov 2025 – Jun 2026</p>
+          <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
+          <figure class="project-figure">
+            <img src="assets/projects/platform.gif" alt="TODO: describe what the image shows" loading="lazy">
+          </figure>
+          -->
+          <p class="project-desc">A deployment and MLOps platform for NPEC’s plant phenotyping computer vision models, built as a team. A CI/CD pipeline in GitHub Actions publishes one Docker image to GitHub Container Registry, and that same image runs unmodified on a local machine, on an on-premise server through Portainer, and on Azure Container Apps, with environment variables switching the storage and tracking backends. The platform closes the loop on model quality: user feedback triggers scheduled Airflow retraining, every candidate is evaluated and tracked in MLflow, and a new model is promoted automatically only when it beats the current champion on holdout F1.</p>
+          <ul class="pills"><li>Docker</li><li>GitHub Actions</li><li>Portainer</li><li>Azure Container Apps</li><li>Airflow</li><li>MLflow</li></ul>
         </article>
         <article class="card project" id="emotion" aria-labelledby="emotion-title">
           <h2 id="emotion-title">Ukrainian Video Emotion Classification</h2>
-          <p class="subtitle">for Content Intelligence Agency · Group project · Sep – Nov 2025</p>
+          <p class="subtitle">Content Intelligence Agency, via BUas · Group project · Sep – Nov 2025</p>
           <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
           <figure class="project-figure">
             <img src="assets/projects/emotion.gif" alt="TODO: describe what the image shows" loading="lazy">
           </figure>
           -->
-          <div class="project-section"><h3>Problem</h3><p>Tag emotions in Ukrainian-language video, a low-resource language with little labelled training data.</p></div>
-          <div class="project-section"><h3>Approach</h3><p>An end-to-end pipeline: Whisper transcription, optional translation, then classification with a fine-tuned Ukrainian RoBERTa transformer. We generated synthetic training data with a local LLM and documented the model with model cards, privacy and sustainability reporting.</p></div>
-          <div class="project-section"><h3>Result</h3><p>78% accuracy on the 7-class emotion task.</p></div>
+          <p class="project-desc">An end-to-end pipeline for the Content Intelligence Agency (CIA) that tags emotions in Ukrainian-language video. Whisper transcribes the audio, an optional step translates it, and a fine-tuned Ukrainian RoBERTa transformer classifies each segment into one of 7 emotions. Ukrainian is a low-resource language with little labelled data, so we generated synthetic training examples with a local LLM. The classifier reached 78% accuracy, and the project is documented with model cards and privacy and sustainability reporting.</p>
           <ul class="pills"><li>Whisper</li><li>RoBERTa</li><li>HuggingFace Transformers</li><li>Synthetic data</li><li>Model cards</li></ul>
-          <!-- TODO: replace with the project repo URL -->
-          <a href="https://github.com/yuliiamedun/REPO-NAME">View on GitHub<span class="visually-hidden">: Ukrainian Video Emotion Classification</span></a>
         </article>
         <article class="card project" id="fingerspell" aria-labelledby="fingerspell-title">
           <h2 id="fingerspell-title">FingerSpell: Dutch Sign Language Recognition</h2>
-          <p class="subtitle">Group project · Jan – Feb 2026</p>
+          <p class="subtitle">BUas · Group project · Jan – Feb 2026</p>
           <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
           <figure class="project-figure">
             <img src="assets/projects/fingerspell.gif" alt="TODO: describe what the image shows" loading="lazy">
           </figure>
           -->
-          <div class="project-section"><h3>Problem</h3><p>Help learners practise the NGT (Dutch Sign Language) finger alphabet, including letters that involve movement.</p></div>
-          <div class="project-section"><h3>Approach</h3><p>A real-time webcam tool with hand tracking, built in a 2-week sprint with two teammates. The first model handled static hand shapes well; we improved it with engineered motion features and classical ML model selection.</p></div>
-          <div class="project-section"><h3>Result</h3><p>Near-100% accuracy across the full alphabet.</p></div>
-          <ul class="pills"><li>Hand tracking</li><li>OpenCV</li><li>Feature engineering</li><li>scikit-learn</li></ul>
-          <!-- TODO: replace with the project repo URL -->
-          <a href="https://github.com/yuliiamedun/REPO-NAME">View on GitHub<span class="visually-hidden">: FingerSpell: Dutch Sign Language Recognition</span></a>
+          <p class="project-desc">A real-time webcam app that teaches and quizzes beginners on the NGT (Dutch Sign Language) finger alphabet, built with two teammates in a 2-week sprint. MediaPipe extracts hand landmarks from every frame. Our first Random Forest handled static hand shapes well, and a CNN reached 99% accuracy but missed the letters that involve movement because it only saw single frames. The final version measures how the landmarks move over a 5-frame window to decide whether a sign is static or dynamic, then routes it to one of two Random Forests, reaching near-100% accuracy across the full alphabet. Users can also collect their own data and train models for other one-handed alphabets.</p>
+          <ul class="pills"><li>MediaPipe</li><li>OpenCV</li><li>scikit-learn</li><li>Random Forest</li><li>CNN</li><li>Feature engineering</li></ul>
+          <a href="https://github.com/txoof/fingerspell">View on GitHub<span class="visually-hidden">: FingerSpell: Dutch Sign Language Recognition</span></a>
+        </article>
+        <article class="card project" id="ikea" aria-labelledby="ikea-title">
+          <h2 id="ikea-title">IKEA PIN Terminal Deployment Analysis</h2>
+          <!-- TODO: add the date (and Individual/Group) to the line above -->
+          <p class="subtitle">IKEA, via BUas · 2-week data analytics challenge</p>
+          <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
+          <figure class="project-figure">
+            <img src="assets/projects/ikea.gif" alt="TODO: describe what the image shows" loading="lazy">
+          </figure>
+          -->
+          <p class="project-desc">IKEA wanted to know whether the deployment logs of its in-store PIN terminals could reveal terminals compromised by card skimming, using only serial number, date, location and employee. I built a six-page Power BI dashboard covering employee patterns, terminal reuse across locations, logging delays and compliance with IKEA’s twice-weekly check policy. The clearest pattern was a systematic rotation of two terminals at the same cluster of locations (Eco 2 to Eco 12). The data also showed far more multi-location terminals than the client’s fact sheet listed, and only 4 of 59 locations met the twice-weekly check requirement. The dataset is confidential, so the repository shows the dashboard screenshots and findings only.</p>
+          <ul class="pills"><li>Power BI</li><li>DAX</li><li>Python</li><li>Data analysis</li></ul>
+          <a href="https://github.com/yuliiamedun/ikea-pin-terminal-analysis">View on GitHub<span class="visually-hidden">: IKEA PIN Terminal Deployment Analysis</span></a>
         </article>
         <article class="card project" id="pricing" aria-labelledby="pricing-title">
           <h2 id="pricing-title">Dynamic Pricing &amp; Demand Forecasting</h2>
-          <p class="subtitle">for Move Intermodal · Group project · Sep 2026 – ongoing</p>
+          <p class="subtitle">Move Intermodal, via BUas · Group project · Sep 2026 – ongoing</p>
           <!-- TODO: add a screenshot, GIF or diagram to assets/projects/ and uncomment:
           <figure class="project-figure">
             <img src="assets/projects/pricing.gif" alt="TODO: describe what the image shows" loading="lazy">
           </figure>
           -->
-          <div class="project-section"><h3>Problem</h3><p>Move Intermodal, a European intermodal logistics provider, wants pricing that responds to the market and fills more rail capacity.</p></div>
-          <div class="project-section"><h3>Approach</h3><p>With a cross-disciplinary team, building a Dynamic Pricing Strategy Framework that combines market-signal analysis, customer segmentation and a demand forecasting model.</p></div>
-          <div class="project-section"><h3>Result</h3><p>Ongoing. The project targets a 10–15% revenue increase and 5–10% higher rail occupancy; these are goals, not achieved results yet.</p></div>
+          <p class="project-desc">An ongoing project with a cross-disciplinary team for Move Intermodal, a European intermodal logistics provider. We’re building a Dynamic Pricing Strategy Framework that combines market-signal analysis, customer segmentation and a demand forecasting model. The project targets a 10–15% revenue increase and 5–10% higher rail occupancy; these are goals, not achieved results yet.</p>
           <ul class="pills"><li>Demand forecasting</li><li>Customer segmentation</li><li>Market-signal analysis</li></ul>
-          <!-- TODO: client project; remove this link if the repo is private -->
-            <!-- TODO: replace with the project repo URL -->
-          <a href="https://github.com/yuliiamedun/REPO-NAME">View on GitHub<span class="visually-hidden">: Dynamic Pricing &amp; Demand Forecasting</span></a>
         </article>
       </section>
     </div>

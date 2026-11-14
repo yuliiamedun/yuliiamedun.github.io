@@ -207,9 +207,9 @@ a:hover { color: #fff; }
 .project .subtitle { margin-bottom: 1.25rem; }
 .project-figure { margin: 0 0 1.25rem; }
 .project-figure img { border-radius: 6px; width: 100%; }
-.project-section h3 { font-size: 0.85rem; color: var(--accent-text); margin-bottom: 0.3rem; }
-.project-section p { color: var(--text-strong); }
+.project-desc { color: var(--text-strong); max-width: 46rem; }
 .project .pills { margin: 0.5rem 0 1.25rem; }
+.project .pills:last-child { margin-bottom: 0; }
 .project-list { display: grid; gap: 1.5rem; }
 
 /* ---------- Contact ---------- */

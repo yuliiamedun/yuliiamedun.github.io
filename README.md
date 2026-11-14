@@ -35,5 +35,5 @@ Open `index.html` in a browser, or run `python3 -m http.server` in this folder a
 ## What to edit (search the code for `TODO`)
 
 - **Links:** LinkedIn and GitHub live in `js/main.js` (`SITE`) and in `contact.html` (used when JavaScript is off). Change both if they move.
-- **Project repos:** replace each `https://github.com/yuliiamedun/REPO-NAME` in `projects.html`.
+- **Project repos:** only projects with a public repo get a "View on GitHub" link. To add one, copy the link line from another card in `projects.html`.
 - **Project images:** add files to `assets/projects/`, then uncomment the `<figure>` block in each project card and write real alt text. Keep GIFs under ~5 MB; use MP4 for longer clips.
